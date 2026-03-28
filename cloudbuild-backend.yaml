@@ -1,13 +1,13 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/wally-registry/wally-backend:$COMMIT_SHA', '-f', 'wally-registry-backend/Dockerfile', '.']
+    args: ['build', '-t', 'us-central1-docker.pkg.dev/wally-registry-491602/wally-backend/wally-backend:$COMMIT_SHA', '-f', 'wally-registry-backend/Dockerfile', '.']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/wally-registry/wally-backend:$COMMIT_SHA']
+    args: ['push', 'us-central1-docker.pkg.dev/wally-registry-491602/wally-backend/wally-backend:$COMMIT_SHA']
   - name: "gcr.io/cloud-builders/gcloud"
     args:
       [
         "run", "deploy", "wally-backend",
-        "--image", "gcr.io/wally-registry/wally-backend:$COMMIT_SHA",
+        "--image", "us-central1-docker.pkg.dev/wally-registry-491602/wally-backend/wally-backend:$COMMIT_SHA",
         "--region", "us-central1",
         "--platform", "managed",
         "--allow-unauthenticated",
