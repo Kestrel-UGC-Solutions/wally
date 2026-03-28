@@ -1,7 +1,7 @@
 [default]
 address = "0.0.0.0"
 port = 8080
-auth = { type = "unauthenticated" }
+auth = { type = "double-api-key", value = { write = "921b69fe9627a5fa1e620097e6290788c5d81fdf1379852ac4d685c28114d40f" } }
 storage = { type = "gcs", bucket = "wally-registry-bucket-kestrel" }
 index_url = "https://github.com/Kestrel-UGC-Solutions/wally-index"
 
