@@ -37,6 +37,6 @@ COPY --chown=1000 --from=build /usr/app/wally-registry-backend/Rocket.toml "/app
 
 USER 1000
 
-EXPOSE 8000
+EXPOSE 8080
 WORKDIR /app
 CMD ["./launch"]
